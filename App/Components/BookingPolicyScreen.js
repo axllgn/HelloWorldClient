@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { PricingCard, Card } from 'react-native-elements';
 import stripe from 'tipsi-stripe';
 import axios from '../axios.js';
-import { STRIPE_API_KEY } from '../Config/config';
+import config from '../Config/config';
 
 stripe.init({
-  publishableKey: STRIPE_API_KEY
+  publishableKey: config.STRIPE_API_KEY
 });
 
 class BookingPolicyScreen extends React.Component {

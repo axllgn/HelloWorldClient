@@ -30,7 +30,7 @@ class BecomeAGuideQuestions1 extends React.Component {
       Axios.get(query)
       .then((res) => {
         const cities = res.data.predictions;
-        // console.log('google search data', this.state)
+        console.log('google search data', res.data.predictions)
         this.setState({ citiesPrediction: cities });
       })
       .catch((err) => {
@@ -42,7 +42,7 @@ class BecomeAGuideQuestions1 extends React.Component {
   }
   render() {
     console.log('PROPS', this.props);
-    const filterCities = this.state.citiesPrediction.length > 0 && this.state.citiesPrediction[0].description !== this.props.search.city ? this.state.citiesPrediction : [];
+    const filterCities = this.state.citiesPrediction.length > 0 && this.state.citiesPrediction[0].description !== this.props.becomeAGuide.city ? this.state.citiesPrediction : [];
 
     return (
       <View style={{marginTop: 100}}>
